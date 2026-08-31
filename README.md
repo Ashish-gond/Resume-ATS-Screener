@@ -1,6 +1,6 @@
 # 📄 Resume ATS Screener
 
-A Python-based **Resume Applicant Tracking System (ATS) Screener** that analyzes a candidate's resume against a given Job Description and generates an ATS compatibility score.
+A Python-based **Applicant Tracking System (ATS) Resume Screener** that analyzes a candidate's resume against a given Job Description and generates an ATS compatibility score.
 
 The application uses **TF-IDF and Cosine Similarity** for resume-job matching and provides skill analysis, missing skills, improvement suggestions, scan history, and PDF reports.
 
@@ -12,72 +12,88 @@ Resume ATS Screener is a desktop application developed using **Python and Tkinte
 
 The main purpose of this project is to simulate how an Applicant Tracking System (ATS) evaluates a resume according to a specific job description.
 
-The application helps candidates understand how well their resume matches a particular job role and what improvements can be made.
+It helps candidates understand:
+
+- 📊 ATS compatibility score
+- ✅ Matching skills
+- ❌ Missing skills
+- 💡 Resume improvement suggestions
+- 📑 PDF ATS report
+- 🕒 Resume scan history
 
 ---
 
 ## ✨ Features
 
-- 📄 Upload Resume in PDF format
-- 📝 Enter Job Description
-- 📊 Calculate ATS Compatibility Score
-- 🧠 Resume and Job Description matching using TF-IDF
-- 🔍 Cosine Similarity based scoring
-- ✅ Identify matching skills
-- ❌ Identify missing skills
-- 💡 Provide resume improvement suggestions
-- 📜 Maintain scan history using SQLite
-- 📑 Generate ATS analysis reports in PDF format
-- 🖥️ User-friendly Tkinter desktop interface
+### 📤 Resume Upload
+Upload a resume in **PDF format** and extract its text automatically.
+
+### 📝 Job Description Analysis
+Enter the target job description to compare it with the candidate's resume.
+
+### 📊 ATS Score
+Calculates a compatibility score using:
+
+- TF-IDF Vectorization
+- Cosine Similarity
+
+### 🛠️ Skill Analysis
+Identifies skills that are:
+
+- Present in the resume
+- Required by the job description
+- Missing from the resume
+
+### 💡 Improvement Suggestions
+Provides suggestions to improve resume-job matching.
+
+### 📑 PDF Report
+Generates a professional ATS analysis report in PDF format.
+
+### 🕒 Scan History
+Stores previous ATS scans using SQLite database.
 
 ---
 
-## 🛠️ Technologies Used
+## 🧠 Technologies Used
 
 | Technology | Purpose |
 |------------|---------|
-| Python | Core programming language |
+| Python | Application development |
 | Tkinter | Graphical User Interface |
-| PyPDF2 | Extract text from PDF resumes |
-| Scikit-learn | TF-IDF and Cosine Similarity |
-| NumPy | Numerical computation |
-| SQLite | Store scan history |
-| ReportLab | Generate PDF reports |
+| PyPDF2 | PDF text extraction |
+| Scikit-learn | TF-IDF & Cosine Similarity |
+| NumPy | Numerical processing |
+| SQLite | Scan history database |
+| ReportLab | PDF report generation |
 
 ---
 
-## 🧠 How ATS Scoring Works
+## 🔍 How ATS Scoring Works
 
-The application follows these basic steps:
+The system converts the resume and job description into numerical vectors using **TF-IDF (Term Frequency-Inverse Document Frequency)**.
 
-1. User uploads a resume in PDF format.
-2. Resume text is extracted using **PyPDF2**.
-3. User enters the target Job Description.
-4. Resume and Job Description are converted into numerical vectors using **TF-IDF**.
-5. **Cosine Similarity** is calculated between the resume and job description.
-6. The similarity value is converted into an ATS compatibility score.
-7. The application analyzes matching and missing skills.
-8. Improvement suggestions are displayed.
-9. The scan can be stored in SQLite history.
-10. A PDF report can be generated.
+Then it calculates their similarity using **Cosine Similarity**.
 
----
+A higher similarity means the resume contains more relevant content for the selected job description.
 
-## 📐 ATS Matching Process
+### Basic Process
 
 ```text
 Resume PDF
-     ↓
+    ↓
 Text Extraction
-     ↓
-Resume Text
-     ↓
+    ↓
+Text Preprocessing
+    ↓
 TF-IDF Vectorization
-     ↓
+    ↓
 Cosine Similarity
-     ↓
+    ↓
 ATS Score
-     ↓
+    ↓
 Skill Analysis
-     ↓
-Suggestions & Report
+    ↓
+Improvement Suggestions
+    ↓
+PDF Report
