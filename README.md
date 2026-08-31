@@ -10,7 +10,7 @@ The application uses **TF-IDF and Cosine Similarity** for resume-job matching an
 
 Resume ATS Screener is a desktop application developed using **Python and Tkinter**.
 
-The main purpose of this project is to simulate how an Applicant Tracking System (ATS) evaluates a resume according to a specific job description.
+The main purpose of this project is to simulate how an Applicant Tracking System evaluates a resume according to a specific job description.
 
 It helps candidates understand:
 
@@ -18,82 +18,69 @@ It helps candidates understand:
 - ✅ Matching skills
 - ❌ Missing skills
 - 💡 Resume improvement suggestions
-- 📑 PDF ATS report
-- 🕒 Resume scan history
+- 📜 Previous scan history
+- 📄 ATS report generation
 
 ---
 
 ## ✨ Features
 
 ### 📤 Resume Upload
-Upload a resume in **PDF format** and extract its text automatically.
+Upload a resume in **PDF format**.
 
 ### 📝 Job Description Analysis
-Enter the target job description to compare it with the candidate's resume.
+Enter the job description against which the resume should be evaluated.
 
 ### 📊 ATS Score
-Calculates a compatibility score using:
+Generates an ATS compatibility score based on resume and job-description similarity.
 
-- TF-IDF Vectorization
-- Cosine Similarity
+### 🧠 TF-IDF + Cosine Similarity
+Uses Natural Language Processing techniques to calculate the similarity between the resume and job description.
 
 ### 🛠️ Skill Analysis
-Identifies skills that are:
+Identifies relevant skills found in the resume.
 
-- Present in the resume
-- Required by the job description
-- Missing from the resume
+### ❌ Missing Skills
+Highlights important skills that are present in the job description but missing from the resume.
 
 ### 💡 Improvement Suggestions
-Provides suggestions to improve resume-job matching.
+Provides suggestions to improve resume-job compatibility.
 
-### 📑 PDF Report
+### 📜 Scan History
+Stores previous ATS scans using SQLite.
+
+### 📄 PDF Report
 Generates a professional ATS analysis report in PDF format.
-
-### 🕒 Scan History
-Stores previous ATS scans using SQLite database.
 
 ---
 
-## 🧠 Technologies Used
+## 🛠️ Technologies Used
 
 | Technology | Purpose |
 |------------|---------|
 | Python | Application development |
 | Tkinter | Graphical User Interface |
-| PyPDF2 | PDF text extraction |
-| Scikit-learn | TF-IDF & Cosine Similarity |
-| NumPy | Numerical processing |
-| SQLite | Scan history database |
-| ReportLab | PDF report generation |
+| Scikit-learn | TF-IDF and Cosine Similarity |
+| PyPDF2 | Extract text from PDF resumes |
+| SQLite | Store scan history |
+| ReportLab | Generate PDF reports |
 
 ---
 
-## 🔍 How ATS Scoring Works
-
-The system converts the resume and job description into numerical vectors using **TF-IDF (Term Frequency-Inverse Document Frequency)**.
-
-Then it calculates their similarity using **Cosine Similarity**.
-
-A higher similarity means the resume contains more relevant content for the selected job description.
-
-### Basic Process
+## 📁 Project Structure
 
 ```text
-Resume PDF
-    ↓
-Text Extraction
-    ↓
-Text Preprocessing
-    ↓
-TF-IDF Vectorization
-    ↓
-Cosine Similarity
-    ↓
-ATS Score
-    ↓
-Skill Analysis
-    ↓
-Improvement Suggestions
-    ↓
-PDF Report
+Resume-ATS-Screener/
+│
+├── resumes/
+│   └── Ashish_Gond_Resume (4).pdf
+│
+├── main.py
+├── ats_engine.py
+├── database.py
+├── ats_history.db
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+└── main_backup.py
