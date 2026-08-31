@@ -18,69 +18,72 @@ It helps candidates understand:
 - ✅ Matching skills
 - ❌ Missing skills
 - 💡 Resume improvement suggestions
-- 📜 Previous scan history
-- 📄 ATS report generation
+- 📑 ATS screening report
+- 🕒 Scan history
 
 ---
 
 ## ✨ Features
 
-### 📤 Resume Upload
-Upload a resume in **PDF format**.
+### 📄 Resume Upload
+Upload a resume in **PDF format** and extract its text automatically.
 
-### 📝 Job Description Analysis
-Enter the job description against which the resume should be evaluated.
+### 🎯 ATS Compatibility Score
+Compare the resume with the provided Job Description and generate an ATS score.
 
-### 📊 ATS Score
-Generates an ATS compatibility score based on resume and job-description similarity.
-
-### 🧠 TF-IDF + Cosine Similarity
-Uses Natural Language Processing techniques to calculate the similarity between the resume and job description.
+### 🧠 Resume-Job Matching
+Uses **TF-IDF Vectorization** and **Cosine Similarity** to measure the similarity between resume content and job requirements.
 
 ### 🛠️ Skill Analysis
 Identifies relevant skills found in the resume.
 
 ### ❌ Missing Skills
-Highlights important skills that are present in the job description but missing from the resume.
+Shows important skills from the Job Description that are not detected in the resume.
 
 ### 💡 Improvement Suggestions
-Provides suggestions to improve resume-job compatibility.
+Provides suggestions for keywords and skills that can improve resume-job matching.
 
-### 📜 Scan History
-Stores previous ATS scans using SQLite.
+### 🕒 Scan History
+Stores previous ATS screening results using SQLite.
 
-### 📄 PDF Report
-Generates a professional ATS analysis report in PDF format.
+### 📑 PDF Report
+Generates and saves a professional ATS screening report in PDF format.
 
 ---
 
 ## 🛠️ Technologies Used
 
 | Technology | Purpose |
-|------------|---------|
+|---|---|
 | Python | Application development |
-| Tkinter | Graphical User Interface |
-| Scikit-learn | TF-IDF and Cosine Similarity |
-| PyPDF2 | Extract text from PDF resumes |
-| SQLite | Store scan history |
-| ReportLab | Generate PDF reports |
+| Tkinter | Desktop GUI |
+| PyPDF2 | PDF text extraction |
+| Scikit-learn | TF-IDF & Cosine Similarity |
+| SQLite | Scan history database |
+| ReportLab | PDF report generation |
+| Git & GitHub | Version control |
 
 ---
 
-## 📁 Project Structure
+## 🧠 How ATS Scoring Works
+
+The application follows these main steps:
 
 ```text
-Resume-ATS-Screener/
-│
-├── resumes/
-│   └── Ashish_Gond_Resume (4).pdf
-│
-├── main.py
-├── ats_engine.py
-├── database.py
-├── ats_history.db
-├── requirements.txt
-├── README.md
-├── .gitignore
-│
-└── main_backup.py
+Resume PDF
+     ↓
+Extract Resume Text
+     ↓
+Enter Job Description
+     ↓
+TF-IDF Vectorization
+     ↓
+Cosine Similarity
+     ↓
+Skill Analysis
+     ↓
+ATS Compatibility Score
+     ↓
+Missing Skills & Suggestions
+     ↓
+PDF Report
