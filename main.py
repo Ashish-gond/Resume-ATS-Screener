@@ -1,3 +1,4 @@
+print("MAIN.PY STARTED")
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 from PyPDF2 import PdfReader
@@ -902,5 +903,5 @@ tk.Button(
 # =========================================================
 # START
 # =========================================================
-
+print("ATS APP STARTING...")
 root.mainloop()
